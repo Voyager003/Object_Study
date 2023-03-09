@@ -6,6 +6,15 @@ public class Bag {
     private Invitation invitation;
     private Ticket ticket;
 
+    public Bag(Long amount) {
+        this(null, amount);
+    }
+
+    public Bag(Invitation invitation, long amount) {
+        this.invitation = invitation;
+        this.amount = amount;
+    }
+
     public boolean hasInvitation() {
         return invitation != null;
     }
