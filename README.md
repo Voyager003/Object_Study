@@ -6,3 +6,6 @@
 
 Repo : https://github.com/eternity-oop/object
 
+---
+
+1. [객체, 설계](https://github.com/Voyager003/Object_study/tree/chapter-1)
