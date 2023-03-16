@@ -15,6 +15,10 @@ public class Screening {
         this.whenScreened = whenScreened;
     }
 
+    public Reservation reserve(Customer customer, int audienceCount) {
+        return new Reservation(customer, this, calculateFee(audienceCount), audienceCount);
+    }
+
     public LocalDateTime getWhenScreened() {
         return whenScreened;
     }
