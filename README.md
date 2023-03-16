@@ -9,3 +9,4 @@ Repo : https://github.com/eternity-oop/object
 ---
 
 1. [객체, 설계](https://github.com/Voyager003/Object_study/tree/chapter-1)
+2. [객체지향 프로그래밍](https://github.com/Voyager003/Object_study/tree/chapter-2)
