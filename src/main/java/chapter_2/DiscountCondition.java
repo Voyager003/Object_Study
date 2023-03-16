@@ -1,2 +1,5 @@
-package chapter_2;public class DiscountCondition {
+package chapter_2;
+
+public interface DiscountCondition {
+    boolean isSatisfiedBy(Screening screening);
 }
