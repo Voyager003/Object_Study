@@ -1,8 +1,9 @@
 package chapter_2;
 
-public class NoneDiscountPolicy extends DiscountPolicy {
+public class NoneDiscountPolicy extends DefaultDiscountPolicy {
+    
     @Override
-    protected Money getDiscountAomunt(Screening screening) {
+    protected Money getDiscountAmount(Screening screening) {
         return Money.ZERO;
     }
 }

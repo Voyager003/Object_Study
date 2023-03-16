@@ -1,6 +1,6 @@
 package chapter_2;
 
-public class PercentDiscountPolicy extends DiscountPolicy {
+public class PercentDiscountPolicy extends DefaultDiscountPolicy {
 
     private double percent;
 
@@ -10,7 +10,7 @@ public class PercentDiscountPolicy extends DiscountPolicy {
     }
 
     @Override
-    protected Money getDiscountAomunt(Screening screening) {
+    protected Money getDiscountAmount(Screening screening) {
         return screening.getMovieFee().times(percent);
     }
 }
