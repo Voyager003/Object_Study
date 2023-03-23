@@ -14,6 +14,11 @@ public class Movie {
     private List<DiscountCondition> discountConditions;
 
     private MovieType movieType;
+
+    public MovieType getMovieType() {
+        return movieType;
+    }
+
     private Money discountAmount;
     private double discountPercent;
 
