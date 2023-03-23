@@ -3,6 +3,7 @@ package chapter_3;
 import chapter_3.Money;
 
 import java.time.Duration;
+import java.time.LocalDateTime;
 import java.util.List;
 
 public class Movie {
@@ -35,6 +36,21 @@ public class Movie {
             throw new IllegalArgumentException();
         }
         return fee;
+    }
+
+    public boolean isDiscountable(LocalDateTime whenScreened, int sequence) {
+        for (DiscountCondition condition : discountConditions) {
+            if (condition.getType() == DiscountConditionType.PERIOD) {
+                if (condition.isDiscountable(whenScreened.getDayOfWeek(), whenScreened.toLocalTime())) {
+                    return true;
+                }
+            } else {
+                if (condition.isDiscountable(sequence)) {
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 }
 
