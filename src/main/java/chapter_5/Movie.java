@@ -13,9 +13,13 @@ public class Movie {
     private MovieType movieType;
     private Money discountAmount;
     private double discountPercent;
+    private List<DiscountCondition> discountConditions;
 
     public Money calculateMovieFee(Screnning screnning) {
-        return null;
+        if (isDiscountable(screnning)) {
+            return fee.minus(calculateDiscountAmount());
+        }
+        return fee;
     }
 
     private boolean isDiscountable(Screnning screening) {
