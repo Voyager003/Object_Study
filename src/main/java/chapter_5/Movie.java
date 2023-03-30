@@ -14,6 +14,10 @@ public class Movie {
     private Money discountAmount;
     private double discountPercent;
 
+    public Money calculateMovieFee(Screnning screnning) {
+        return null;
+    }
+
     private boolean isDiscountable(Screnning screening) {
         return discountConditions.stream()
                 .anyMatch(condition -> condition.isSatisfiedBy(screening));
