@@ -1,9 +1,10 @@
 package chapter_5;
 
 import java.time.Duration;
+import java.util.Arrays;
 import java.util.List;
 
-public class Movie {
+public abstract class Movie {
 
     private String title;
     private Duration runningTime;
@@ -15,8 +16,15 @@ public class Movie {
     private double discountPercent;
     private List<DiscountCondition> discountConditions;
 
-    public Money calculateMovieFee(Screnning screnning) {
-        if (isDiscountable(screnning)) {
+    public Movie(String title, Duration runningTime, Money fee, DiscountCondition... discountConditions) {
+        this.title = title;
+        this.runningTime = runningTime;
+        this.fee = fee;
+        this.discountConditions = Arrays.asList(discountConditions);
+    }
+
+    public Money calculateMovieFee(Screnning screening) {
+        if (isDiscountable(screening)) {
             return fee.minus(calculateDiscountAmount());
         }
         return fee;
@@ -27,27 +35,5 @@ public class Movie {
                 .anyMatch(condition -> condition.isSatisfiedBy(screening));
     }
 
-    private Money calculateDiscountAmount() {
-        switch (movieType) {
-            case AMOUNT_DISCOUNT:
-                return calculateDiscountAmount();
-            case PERCENT_DISCOUNT:
-                return calculatePercentDiscountAmount();
-            case NONE_DISCOUNT:
-                return calculateNoneDiscountAmount();
-        }
-        throw new IllegalStateException();
-    }
-
-    private Money calculateAmountDiscountAmount() {
-        return discountAmount;
-    }
-
-    private Money calculatePercentDiscountAmount() {
-        return fee.times(discountPercent);
-    }
-
-    private Money calculateNoneDiscountAmount() {
-        return Money.ZERO;
-    }
+    abstract protected Money calculateDiscountAmount();
 }
