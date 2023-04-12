@@ -1,6 +1,5 @@
 package chapter_6;
 
-@Getter
 public class Theater {
 
     private TicketSeller ticketSeller;
