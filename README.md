@@ -12,3 +12,4 @@ Repo : https://github.com/eternity-oop/object
 2. [객체지향 프로그래밍](https://github.com/Voyager003/Object_study/tree/chapter-2)
 3. [설계품질과 트레이드오프](https://github.com/Voyager003/Object_study/pull/1)
 4. [책임 할당하기](https://github.com/Voyager003/Object_study/pull/2)
+5. [메시지와 인터페이스](https://github.com/Voyager003/Object_study/tree/chapter-6)
