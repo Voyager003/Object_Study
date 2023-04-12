@@ -27,16 +27,20 @@ public class Bag {
     }
 
     private void setTicket(Ticket ticket) {
-        this.ticket = ticket;
+        if (hasInvitation()) {
+            this.ticket = ticket;
+            return 0L;
+        } else {
+            this.ticket = ticket;
+            minusAmount(ticket.getFee());
+            return ticket.getFee();
+        }
     }
 
     public boolean hasInvitation() {
         return invitation != null;
     }
 
-//    public boolean hasTicket() {
-//        return ticket != null;
-//    }
 
     private void minusAmount(Long amount) {
         this.amount -= amount;
